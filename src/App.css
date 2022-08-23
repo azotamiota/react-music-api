@@ -1,16 +1,59 @@
-* {
+/* * {
     border: 1px dashed #deadaf;
+} */
+
+body {
+    font-family: 'Playfair Display', sans-serif;
+}
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px auto; */
+    height: 360px;
+    background-position: bottom;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/music.png');
+}
+
+h1 {
+    font-size: 80px;
+}
+
+p {
+    font-size: 25px;
+    text-align: center;
+}
+
+form {
+    margin: 40px 7vw;
 }
 
 #result-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    width: 90%
+    width: 60%;
+    margin: 20px auto;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 20px;
+    box-shadow: 0 0 10px black;
 
+}
+
+#image {
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+}
+
+audio {
+    width: 100%
 }

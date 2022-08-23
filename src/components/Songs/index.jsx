@@ -23,8 +23,7 @@ const Songs = () => {
             try {
                 const bands = await axios.request(options)
                 const songsResult = await bands.data.data
-                console.log('.env: ', import.meta.env.VITE_API_KEY)
-                console.log('songs at line 25: ', songsResult)
+                await console.log('songs at line 25: ', bands.data.data)
                 setSongs(songsResult)
             } catch (error) {
                 console.log('Error while fetching data: ', error);
@@ -40,7 +39,6 @@ const Songs = () => {
 
     return <>
     
-        <h3>Find a band</h3>
         <SearchBar handleUserInput={handleSearch}/>
         <div id='result-container'>
             {songs.map(song => <Cards key={song.id} data={song} />)}
