@@ -5,7 +5,7 @@ import Cards from "../Cards";
 
 const Songs = () => {
    
-    const [band, setBand] = useState('tankcsapda')
+    const [band, setBand] = useState('harakiri for the sky')
     const [songs, setSongs] = useState([])
 
     useEffect(() => {
