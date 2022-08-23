@@ -40,6 +40,7 @@ const Songs = () => {
     return <>
     
         <SearchBar handleUserInput={handleSearch}/>
+        <h2>{band.slice(0, 1).toUpperCase() + band.slice(1)}</h2>
         <div id='result-container'>
             {songs.map(song => <Cards key={song.id} data={song} />)}
         </div>
