@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 
 const Cards = ({data}) => {
+
+    const [liked, setLiked] = useState(false)
+
     return <>
 
     <div className="card" style={{width: '18rem'}}>
@@ -15,6 +18,7 @@ const Cards = ({data}) => {
             </audio>
         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
         </div>
+        <a onClick={() => {liked ? setLiked(false) : setLiked(true)}} className="like-btn">{liked ? '❤️' : '🖤'}</a>
     </div>
 
         {/* <div className="card">

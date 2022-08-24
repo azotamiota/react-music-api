@@ -3,7 +3,8 @@ import React from "react";
 const Home = () => {
     return <>
     
-        <h1>This is HOME</h1>
+        <p className='paragrapgh' >This is HOME.<br></br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestiae in et nobis accusantium.
+             Ducimus modi nisi laborum expedita consectetur ipsum, sit odit. Aliquid fuga quas fugit a ut ex.</p>
        
     </>
 }

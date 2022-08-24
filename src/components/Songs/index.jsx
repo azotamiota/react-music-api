@@ -5,10 +5,12 @@ import Cards from "../Cards";
 
 const Songs = () => {
    
-    const [band, setBand] = useState('harakiri for the sky')
+    const [band, setBand] = useState('')
     const [songs, setSongs] = useState([])
+    const [visibleRes, setVisibleRes] = useState(false)
 
     useEffect(() => {
+        if (band) {
         const searchBand = async () => {
             const options = {
                 method: 'GET',
@@ -23,26 +25,32 @@ const Songs = () => {
             try {
                 const bands = await axios.request(options)
                 const songsResult = await bands.data.data
-                await console.log('songs at line 25: ', bands.data.data)
+                await console.log('songs at line 25: ', bands.data)
+                
                 setSongs(songsResult)
+                
             } catch (error) {
                 console.log('Error while fetching data: ', error);
             }
             
         }
         searchBand()
-    }, [band])
+    }
+}, [band])
 
-    function handleSearch(userInput) {
+function handleSearch(userInput) {
         setBand(userInput)
+        setVisibleRes(true)
     }
 
     return <>
     
         <SearchBar handleUserInput={handleSearch}/>
+        <div style={{display: visibleRes ? 'block' : 'none'}}>
         <h2>{band.slice(0, 1).toUpperCase() + band.slice(1)}</h2>
         <div id='result-container'>
-            {songs.map(song => <Cards key={song.id} data={song} />)}
+            {songs && songs.map(song => <Cards key={song.id} data={song} />)}
+        </div>
         </div>
       
         

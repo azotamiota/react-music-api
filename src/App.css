@@ -6,6 +6,19 @@ body {
     font-family: 'Playfair Display', sans-serif;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 #intro {
     display: flex;
     flex-direction: column;
@@ -32,6 +45,12 @@ p {
     text-align: center;
 }
 
+.paragrapgh {
+    text-align: justify;
+    width: 70%;
+    margin: 40px auto;
+}
+
 form {
     margin: 40px 7vw;
 }
@@ -49,16 +68,33 @@ form {
     justify-content: center;
     margin: 20px;
     box-shadow: 0 0 10px black;
-
-}
-
-#image {
-    width: 200px;
-    height: 200px;
-    background-position: center;
-    background-size: cover;
 }
 
 audio {
     width: 100%
+}
+
+.like-btn {
+    position: absolute;
+    font-size: 15px;
+    bottom: -2%;
+    right: 10px;
+    border-radius: 50%;
+    transition: 1s;
+    text-decoration: none;
+    
+}
+
+.like-btn:hover {
+    cursor: pointer;
+}
+
+.like-btn:active {
+    /* transform:scale(2,1); */
+    font-size: 100px;
+}
+
+.like-btn:visited {
+    color: red;
+    font-size: 25px;
 }
