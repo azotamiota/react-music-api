@@ -70,8 +70,19 @@ form {
     box-shadow: 0 0 10px black;
 }
 
+.audio-container {
+    border: 1px solid blue;
+    padding: 5px;
+}
+
+
 audio {
     width: 100%
+}
+
+.btn {
+    display: block;
+    margin: 10% 10% 0 10%;
 }
 
 .like-btn {
@@ -100,3 +111,4 @@ audio {
     color: red;
     font-size: 25px;
 }
+

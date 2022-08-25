@@ -25,7 +25,7 @@ const Songs = () => {
             try {
                 const bands = await axios.request(options)
                 const songsResult = await bands.data.data
-                await console.log('songs at line 25: ', bands.data)
+                await console.log('songs at line 25: ', bands.data.data)
                 
                 setSongs(songsResult)
                 
