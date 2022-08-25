@@ -3,8 +3,7 @@ import React from "react";
 const About = () => {
     return <>
     
-        <p className='paragrapgh' >This is ABOUT.<br></br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestiae in et nobis accusantium.
-             Ducimus modi nisi laborum expedita consectetur ipsum, sit odit. Aliquid fuga quas fugit a ut ex.</p>
+        <p className='paragrapgh' >This app is using Deezer's music database. For more information click <a href='https://www.deezer.com/' target='blank'>here.</a></p>
        
     </>
 }

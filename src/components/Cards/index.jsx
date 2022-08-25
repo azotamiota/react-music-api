@@ -28,9 +28,9 @@ const Cards = ({data}) => {
 
     <div className="card" style={{width: '18rem'}}>
         <img src={data.album.cover_medium} className="card-img-top" alt="..." />
-            <h5 className="card-title">{data.title}</h5>
+            <h5 className="card-title">Album: {data.album.title}</h5>
         <div className="card-body" style={background}>
-            <p className="card-text">{data.album.title}</p>
+            <p className="card-text">{data.title}</p>
             
                 <audio controls 
                 onPlay={() => setIsPlaying(true)}
@@ -44,12 +44,6 @@ const Cards = ({data}) => {
         <a onClick={() => {liked ? setLiked(false) : setLiked(true)}} className="like-btn">{liked ? '❤️' : '🖤'}</a>
     </div>
 
-        {/* <div className="card">
-            <img src={data.album.cover_medium} /> 
-            
-            <h2>Album: {data.album.title}</h2>
-            <h3>{data.title}</h3>
-        </div> */}
     </>
 }
 

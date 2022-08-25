@@ -70,6 +70,10 @@ form {
     box-shadow: 0 0 10px black;
 }
 
+.card-title {
+    padding: 3% 0 0 5%;
+}
+
 .audio-container {
     border: 1px solid blue;
     padding: 5px;
@@ -98,6 +102,7 @@ audio {
     box-shadow: 0 0 3px black; 
 }
 
+
 .like-btn:hover {
     cursor: pointer;
 }
@@ -107,8 +112,12 @@ audio {
     font-size: 100px;
 }
 
+.like-btn:focus {
+    /* transform:scale(2,1); */
+    font-size: 300px;
+}
+
 .like-btn:visited {
     color: red;
-    font-size: 25px;
 }
 

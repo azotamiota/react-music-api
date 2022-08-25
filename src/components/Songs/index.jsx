@@ -47,9 +47,10 @@ function handleSearch(userInput) {
     
         <SearchBar handleUserInput={handleSearch}/>
         <div style={{display: visibleRes ? 'block' : 'none'}}>
-        <h2>{band.slice(0, 1).toUpperCase() + band.slice(1)}</h2>
+        <h2>{songs.length ? 'Results for: '+ band.slice(0, 1).toUpperCase() + band.slice(1) : ''}</h2>
         <div id='result-container'>
-            {songs && songs.map(song => <Cards key={song.id} data={song} />)}
+            {/* {songs[0] == 'i' && <h2>Searching...</h2>} */}
+            {songs.length ? songs.map(song => <Cards key={song.id} data={song}/>) : <h2>Searching...</h2>}
         </div>
         </div>
       
