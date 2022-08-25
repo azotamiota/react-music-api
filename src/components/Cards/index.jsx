@@ -4,8 +4,7 @@ const Cards = ({data}) => {
 
     const [liked, setLiked] = useState(false)
     const [isPlaying, setIsPlaying] = useState(false)
-    const [background, setBackground] = useState({backgroundColor: "lightblue"})
-
+    const [background, setBackground] = useState({})
     const [backgroundEffect, setBackgroundEffect] = useState('')
     
     useEffect(() => {
