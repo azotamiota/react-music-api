@@ -76,13 +76,15 @@ audio {
 
 .like-btn {
     position: absolute;
-    font-size: 15px;
-    bottom: -2%;
+    font-size: 20px;
+    padding: 5px;
+    bottom: -4%;
     right: 10px;
     border-radius: 50%;
     transition: 1s;
     text-decoration: none;
-    
+    background-color: white;
+    box-shadow: 0 0 3px black; 
 }
 
 .like-btn:hover {
