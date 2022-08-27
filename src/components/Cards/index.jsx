@@ -10,13 +10,11 @@ const Cards = ({data}) => {
     useEffect(() => {
       
         if (isPlaying) {
-            console.log('isPlaying should be true: ', isPlaying)
             setBackgroundEffect(setInterval(() => {
                 setBackground({backgroundColor: `rgb(${[Math.ceil(Math.random() * 255), Math.ceil(Math.random() * 255), Math.ceil(Math.random() * 255)]})`})
             }, 1000))
 
         } else {
-            console.log('isPlaying shoudl be false: ', isPlaying)
             clearInterval(backgroundEffect)
             setBackground({backgroundColor: "white"})
         }
@@ -41,7 +39,7 @@ const Cards = ({data}) => {
           
         <a href={data.artist.link} target='blank' className="btn btn-secondary">{data.artist.name}</a>
         </div>
-        <a onClick={() => {liked ? setLiked(false) : setLiked(true)}} className="like-btn">{liked ? '❤️' : '🖤'}</a>
+        <a onClick={() => setLiked(prev => !prev)} className="like-btn">{liked ? '❤️' : '🖤'}</a>
     </div>
 
     </>
