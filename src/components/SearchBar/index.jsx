@@ -11,12 +11,6 @@ const SearchBar = () => {
     const state = useSelector(state => {console.log('state print 1: ', state); return state})
     const dispatch = useDispatch();
     
-    useEffect(() => {
-        console.log('band before dispatch loadSongsAction: ', band)
-        dispatch(loadSongsAction(band))
-    },[inputValue])
-
-
     function handleSubmit(e) {
         e.preventDefault()
         console.log('state before dispatching anything in loadSongsAction: ', state)

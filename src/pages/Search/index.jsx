@@ -3,26 +3,22 @@ import { useSelector, useDispatch } from "react-redux";
 
 import SearchBar from "../../components/SearchBar"; 
 import Cards from "../../components/Cards";
-import store from "../../store";
-
+import { loadSongsAction } from "../../actions";
 
 const SearchResultCards = () => {
    
-    const dispatch = useDispatch();
     const songs = useSelector(state => state.songs)
     const band = useSelector(state => state.band)
     const visibleRes = useSelector(state => state.visibleRes)
     console.log('songs in SearchResultCards: ', songs)
-    // const [songs, setSongs] = useState([])
 
-    // useEffect(() => {
-    //     dispatch(loadSongsAction(band))
-    // })
+    const dispatch = useDispatch();
 
-    // function handleSearch(userInput) {
-    //     setBand(userInput)
-    //     setVisibleRes(true)
-    // }
+    useEffect(() => {
+        console.log('band in useEffect before sending: ', band)
+        dispatch(loadSongsAction(band))
+    },[visibleRes])
+
 
     return <>
     

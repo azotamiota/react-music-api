@@ -27,7 +27,7 @@ const reducer = (state = initialStore, action) => {
     if (action.type === "LOAD_RESULTS") {
         return {
             ...state,
-            songs: action.payload
+            songs: action.payload ? action.payload : []
         }
     }
 
