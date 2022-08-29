@@ -1,56 +1,36 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+
 import SearchBar from "../../components/SearchBar"; 
 import Cards from "../../components/Cards";
+import store from "../../store";
 
-const Songs = () => {
+
+const SearchResultCards = () => {
    
-    const [band, setBand] = useState('')
-    const [songs, setSongs] = useState([])
-    const [visibleRes, setVisibleRes] = useState(false)
+    const dispatch = useDispatch();
+    const songs = useSelector(state => state.songs)
+    const band = useSelector(state => state.band)
+    const visibleRes = useSelector(state => state.visibleRes)
+    console.log('songs in SearchResultCards: ', songs)
+    // const [songs, setSongs] = useState([])
 
-    useEffect(() => {
-        if (band) {
-        const searchBand = async () => {
-            const options = {
-                method: 'GET',
-                 url: 'https://deezerdevs-deezer.p.rapidapi.com/search',
-                params: {q: `${band}`},
-                headers: {
-                    'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
-                    'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
-                }
-            };
+    // useEffect(() => {
+    //     dispatch(loadSongsAction(band))
+    // })
 
-            try {
-                const bands = await axios.request(options)
-                const songsResult = await bands.data.data
-                await console.log('songs at line 25: ', bands.data.data)
-                
-                setSongs(songsResult)
-                
-            } catch (error) {
-                console.log('Error while fetching data: ', error);
-            }
-            
-        }
-        searchBand()
-    }
-}, [band])
-
-function handleSearch(userInput) {
-        setBand(userInput)
-        setVisibleRes(true)
-    }
+    // function handleSearch(userInput) {
+    //     setBand(userInput)
+    //     setVisibleRes(true)
+    // }
 
     return <>
     
-        <SearchBar handleUserInput={handleSearch}/>
+        <SearchBar />
         <div style={{display: visibleRes ? 'block' : 'none'}}>
-        <h2>{songs.length ? 'Results for: '+ band.slice(0, 1).toUpperCase() + band.slice(1) : ''}</h2>
+        <h2>{songs ? 'Results for: '+ band.slice(0, 1).toUpperCase() + band.slice(1) : ''}</h2>
         <div id='result-container'>
-            {/* {songs[0] == 'i' && <h2>Searching...</h2>} */}
-            {songs.length ? songs.map(song => <Cards key={song.id} data={song}/>) : <h2>Searching...</h2>}
+            {songs ? songs.map(song => <Cards key={song.id} data={song}/>) : <h2>Searching...</h2>}
         </div>
         </div>
       
@@ -59,4 +39,4 @@ function handleSearch(userInput) {
 
 }
 
-export default Songs;
+export default SearchResultCards;

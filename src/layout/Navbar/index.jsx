@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
-const Header = () => {
+const Navbar = () => {
 
     let activeStyle = {
         textDecoration: "underline",
@@ -24,6 +24,9 @@ const Header = () => {
                     <li className="nav-item">
                         <NavLink className="nav-link" to='about' style={({ isActive }) => (isActive ? activeStyle : undefined)}>About</NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to='favourites' style={({ isActive }) => (isActive ? activeStyle : undefined)}>Favourites</NavLink>
+                    </li>
 
                     </ul>
                 </div>
@@ -36,4 +39,4 @@ const Header = () => {
 
 }
 
-export default Header;
+export default Navbar;
