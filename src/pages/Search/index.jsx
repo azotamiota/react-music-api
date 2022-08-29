@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SearchBar from "../SearchBar"; 
-import Cards from "../Cards";
+import SearchBar from "../../components/SearchBar"; 
+import Cards from "../../components/Cards";
 
 const Songs = () => {
    

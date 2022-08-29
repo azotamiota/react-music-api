@@ -1,6 +1,6 @@
 import React from "react";
 
-const Intro = () => {
+const Hero = () => {
     return <>
         <div id='intro'>
         <h1>Song Sample</h1>
@@ -11,4 +11,4 @@ const Intro = () => {
     </>
 }
 
-export default Intro;
+export default Hero;
