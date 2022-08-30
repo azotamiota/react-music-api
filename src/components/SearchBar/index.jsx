@@ -15,6 +15,7 @@ const SearchBar = () => {
         console.log('state before dispatching anything in loadSongsAction: ', state)
         dispatch({type: "SUBMIT_INPUT", payload: inputValue})
         dispatch({type: "SEARCHBOX_VISIBILITY_ON"})
+        dispatch({type: "UPDATE_INPUT", payload: ''})
     }
 
     function handleInput(e) {
@@ -24,7 +25,7 @@ const SearchBar = () => {
 
     return <>
     <form onSubmit={handleSubmit}>
-    <label><h3>Find an artist</h3></label><br></br>
+        <label><h3>Find an artist</h3></label><br></br>
         <input type='text' id='input-field' onChange={handleInput} value={inputValue}/>
         <input type='submit' value='Go!'/>
     </form>

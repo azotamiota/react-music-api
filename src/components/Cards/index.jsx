@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useRef} from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 const Cards = ({data}) => {
 
     const dispatch = useDispatch()
 
-    const [liked, setLiked] = useState(false)
+    const liked = useRef(false)
     const [isPlaying, setIsPlaying] = useState(false)
     const [background, setBackground] = useState({})
     const [backgroundEffect, setBackgroundEffect] = useState('')
@@ -43,13 +44,13 @@ const Cards = ({data}) => {
                     Your browser does not support the audio tag.
                 </audio>
           
-        <a href={data.artist.link} target='blank' className="btn btn-secondary">{data.artist.name}</a>
+        <Link to={data.artist.link} target='blank' className="btn btn-secondary">{data.artist.name}</Link>
         </div>
-        <a onClick={() => {
-            setLiked(prev => !prev);
+        <button onClick={() => {
+            liked.current = !liked;
             console.log('data that will be sent to dispath ADD FAVOURITEs: ', data)
             dispatch({type: "ADD_FAVOURITES", payload: data})
-        }} className="like-btn">{liked ? '❤️' : '🖤'}</a>
+        }} className="like-btn">{liked ? '❤️' : '🖤'}</button>
     </div>
 
     </>
