@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export const loadSongsAction = (band) => {
 
-    console.log('band in loadSongsAction prop: ', band)
+    // console.log('band in loadSongsAction prop: ', band)
 
     return async (dispatch) => {
             const options = {
@@ -19,7 +19,7 @@ export const loadSongsAction = (band) => {
             try {
                 const bands = await axios.request(options)
                 const songsResult = await bands.data.data
-                console.log('songResults in async loadSongAction fn: ', songsResult)
+                // console.log('songResults in async loadSongAction fn: ', songsResult)
                 dispatch({type: "LOAD_RESULTS", payload: songsResult})
                 
             } catch (error) {

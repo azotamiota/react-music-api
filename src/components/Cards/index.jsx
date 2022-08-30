@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState, useRef, useReducer} from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -6,12 +6,14 @@ const Cards = ({data}) => {
 
     const dispatch = useDispatch()
 
-    const liked = useRef(false)
+    // const liked = useRef(false)
     const [isPlaying, setIsPlaying] = useState(false)
     const [background, setBackground] = useState({})
     const [backgroundEffect, setBackgroundEffect] = useState('')
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
+  
 
-    // const saved = useSelector(state => state.favourites.some(song => song.id == data.id))
+    const isLiked = useSelector(state => state.favourites.some(song => song.id === data.id))
 
     
     useEffect(() => {
@@ -27,7 +29,6 @@ const Cards = ({data}) => {
         }
 
     }, [isPlaying])
-
 
     return <>
 
@@ -47,10 +48,11 @@ const Cards = ({data}) => {
         <Link to={data.artist.link} target='blank' className="btn btn-secondary">{data.artist.name}</Link>
         </div>
         <button onClick={() => {
-            liked.current = !liked;
-            console.log('data that will be sent to dispath ADD FAVOURITEs: ', data)
-            dispatch({type: "ADD_FAVOURITES", payload: data})
-        }} className="like-btn">{liked ? '❤️' : '🖤'}</button>
+            // liked.current = !liked.current
+            console.log('data to dispath: ', {...data, isLiked : true});
+            !isLiked ? dispatch({type: "ADD_FAVOURITES", payload: data}) : dispatch({type: "REMOVE_FAVOURITES", payload: data.id})
+            forceUpdate();
+        }} className="like-btn">{isLiked ? '❤️' : '🖤'}</button>
     </div>
 
     </>

@@ -53,6 +53,13 @@ const reducer = (state = initialStore, action) => {
         }
     }
 
+    if (action.type === "REMOVE_FAVOURITES") {
+        return {
+            ...state,
+            favourites: state.favourites.filter(song => song.id !== action.payload)
+        }
+    }
+
 
     return state
 }

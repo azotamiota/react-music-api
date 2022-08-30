@@ -10,12 +10,10 @@ const SearchResultCards = () => {
     const songs = useSelector(state => state.songs)
     const band = useSelector(state => state.band)
     const visibleRes = useSelector(state => state.visibleRes)
-    console.log('songs in SearchResultCards: ', songs)
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('band in useEffect before sending: ', band)
         dispatch(loadSongsAction(band))
     },[visibleRes])
 

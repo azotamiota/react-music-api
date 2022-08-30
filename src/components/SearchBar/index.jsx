@@ -7,12 +7,10 @@ const SearchBar = () => {
 
 
     const inputValue = useSelector(state => state.inputValue)
-    const state = useSelector(state => {console.log('state print 1: ', state); return state})
     const dispatch = useDispatch();
     
     function handleSubmit(e) {
         e.preventDefault()
-        console.log('state before dispatching anything in loadSongsAction: ', state)
         dispatch({type: "SUBMIT_INPUT", payload: inputValue})
         dispatch({type: "SEARCHBOX_VISIBILITY_ON"})
         dispatch({type: "UPDATE_INPUT", payload: ''})
