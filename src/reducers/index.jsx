@@ -46,6 +46,13 @@ const reducer = (state = initialStore, action) => {
         }
     }
 
+    if (action.type === "ADD_FAVOURITES") {
+        return {
+            ...state,
+            favourites: [...state.favourites, action.payload]
+        }
+    }
+
 
     return state
 }

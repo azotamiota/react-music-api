@@ -1,11 +1,17 @@
 import React, {useEffect, useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Cards = ({data}) => {
+
+    const dispatch = useDispatch()
 
     const [liked, setLiked] = useState(false)
     const [isPlaying, setIsPlaying] = useState(false)
     const [background, setBackground] = useState({})
     const [backgroundEffect, setBackgroundEffect] = useState('')
+
+    // const saved = useSelector(state => state.favourites.some(song => song.id == data.id))
+
     
     useEffect(() => {
       
@@ -39,7 +45,11 @@ const Cards = ({data}) => {
           
         <a href={data.artist.link} target='blank' className="btn btn-secondary">{data.artist.name}</a>
         </div>
-        <a onClick={() => setLiked(prev => !prev)} className="like-btn">{liked ? '❤️' : '🖤'}</a>
+        <a onClick={() => {
+            setLiked(prev => !prev);
+            console.log('data that will be sent to dispath ADD FAVOURITEs: ', data)
+            dispatch({type: "ADD_FAVOURITES", payload: data})
+        }} className="like-btn">{liked ? '❤️' : '🖤'}</a>
     </div>
 
     </>

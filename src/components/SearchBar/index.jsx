@@ -7,7 +7,6 @@ const SearchBar = () => {
 
 
     const inputValue = useSelector(state => state.inputValue)
-    const band = useSelector(state => state.band)
     const state = useSelector(state => {console.log('state print 1: ', state); return state})
     const dispatch = useDispatch();
     
