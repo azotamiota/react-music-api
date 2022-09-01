@@ -4,4 +4,6 @@ export {default as Hero } from '../components/Hero';
 export {default as Cards } from '../components/Cards';
 export {default as Home } from './Home';
 export {default as About } from './About';
+export {default as Login } from './Login';
+export {default as Register } from './Register';
 export {default as Navbar } from '../layout/Navbar';
