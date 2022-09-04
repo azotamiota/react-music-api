@@ -6,7 +6,6 @@ const Cards = ({data}) => {
 
     const dispatch = useDispatch()
 
-    // const liked = useRef(false)
     const [isPlaying, setIsPlaying] = useState(false)
     const [background, setBackground] = useState({})
     const [backgroundEffect, setBackgroundEffect] = useState('')
@@ -45,7 +44,7 @@ const Cards = ({data}) => {
                     Your browser does not support the audio tag.
                 </audio>
           
-        <Link to={data.artist.link} target='blank' className="btn btn-secondary">{data.artist.name}</Link>
+        <a href={data.artist.link} target='blank' className="btn btn-secondary">{data.artist.name}</a>
         </div>
         <button onClick={() => {
             // liked.current = !liked.current

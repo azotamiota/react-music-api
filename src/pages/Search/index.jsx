@@ -23,7 +23,7 @@ const SearchResultCards = () => {
         <SearchBar />
         <div style={{display: visibleRes ? 'block' : 'none'}}>
             <h2>{songs ? 'Results for: '+ band.slice(0, 1).toUpperCase() + band.slice(1) : ''}</h2>
-            <div id='result-container'>
+            <div className='result-container'>
                 {songs ? songs.map(song => <Cards key={song.id} data={song}/>) : <h2>Searching...</h2>}
             </div>
         </div>

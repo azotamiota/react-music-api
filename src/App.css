@@ -2,7 +2,7 @@
     border: 1px dashed #deadaf;
 } */
 
-body {
+#intro {
     font-family: 'Playfair Display', sans-serif;
 }
 
@@ -58,7 +58,7 @@ form {
     margin: 40px 7vw;
 }
 
-#result-container {
+.result-container {
     display: grid;
     grid-template-columns: auto auto auto;
     width: 60%;
@@ -89,7 +89,7 @@ audio {
 
 .btn {
     display: block;
-    margin: 10% 10% 0 10%;
+    margin: 20px 20px !important;
 }
 
 .like-btn {
@@ -112,13 +112,9 @@ audio {
 }
 
 .like-btn:active {
-    /* transform:scale(2,1); */
     font-size: 70px;
 }
 
-/* .like-btn:focus {
-    font-size: 300px;
-} */
 
 .like-btn:visited {
     color: red;
