@@ -1,24 +1,23 @@
-import React, {useEffect, useState} from "react";
-import { useSelector, useDispatch } from "react-redux";
-
-import { loadSongsAction } from "../../actions";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const SearchBar = () => {
 
 
-    const inputValue = useSelector(state => state.inputValue)
+    const [inputValue, setInputValue] = useState('')
     const dispatch = useDispatch();
     
     function handleSubmit(e) {
         e.preventDefault()
+        dispatch({type: "CLEAR_RESULTS"})
         dispatch({type: "SUBMIT_INPUT", payload: inputValue})
         dispatch({type: "SEARCHBOX_VISIBILITY_ON"})
-        dispatch({type: "UPDATE_INPUT", payload: ''})
+        setInputValue('')
     }
 
     function handleInput(e) {
         const newInput = e.target.value
-        dispatch({type: "UPDATE_INPUT", payload: newInput})
+       setInputValue(newInput)
     }
 
     return <>

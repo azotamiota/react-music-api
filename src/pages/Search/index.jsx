@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import SearchBar from "../../components/SearchBar"; 
@@ -15,7 +15,7 @@ const SearchResultCards = () => {
 
     useEffect(() => {
         dispatch(loadSongsAction(band))
-    },[visibleRes])
+    },[visibleRes, band])
 
 
     return <>

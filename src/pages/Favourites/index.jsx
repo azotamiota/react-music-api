@@ -10,7 +10,7 @@ const Favourites = () => {
     return <>
         <div id='favourites'>
             <h3 style={{margin: '40px 7vw'}}>Favourites</h3>
-            <div id='result-container'>
+            <div className='result-container'>
                 {favourites && favourites.map(song => <Cards key={song.id} data={song}/>)}
             </div>
         </div>

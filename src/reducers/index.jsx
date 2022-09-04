@@ -1,6 +1,5 @@
 
 const initialStore = {
-    inputValue: '',
     band: '',
     songs: [],
     visibleRes: false,
@@ -10,10 +9,10 @@ const initialStore = {
 }
 
 const reducer = (state = initialStore, action) => {
-    if (action.type === "UPDATE_INPUT") {
+    if (action.type === "CLEAR_RESULTS") {
         return {
             ...state,
-            inputValue: action.payload
+            songs: []
         }
     }
 
