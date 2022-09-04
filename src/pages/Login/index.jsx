@@ -17,8 +17,9 @@ const Login = () => {
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required />
 
-            <button type="submit" className="btn btn-secondary">Login</button>
+            <button type="submit" className="btn btn-secondary disabled">Login</button>
         </form>
+        <div className="unavailable">Coming soon...</div>
     </div>
        
     </>

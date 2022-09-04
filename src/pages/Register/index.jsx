@@ -18,8 +18,9 @@ const Register = () => {
             <label for="psw"><b>Re-enter Password</b></label>
             <input type="password" placeholder="Re-enter Password" name="re-psw" required />
 
-            <button type="submit" className="btn btn-secondary">Login</button>
+            <button type="submit" className="btn btn-secondary disabled">Register</button>
         </form>
+        <div className="unavailable">Coming soon...</div>
     </div>
        
     </>

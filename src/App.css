@@ -120,3 +120,10 @@ audio {
     color: red;
 }
 
+.unavailable {
+    position: absolute;
+    font-size: 70px;
+    transform: rotate(-45deg);
+    color: rgb(255 0 0 / 60%);
+    bottom: 25%;
+}
